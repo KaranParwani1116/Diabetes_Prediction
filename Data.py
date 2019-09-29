@@ -75,6 +75,12 @@ from sklearn.metrics import accuracy_score
 classifier = tree.DecisionTreeClassifier(min_samples_split=100)
 classifier.fit(Features_train, labels_train)
 pred = classifier.predict(Features_test)
-print(accuracy_score(pred, labels_test))
+print("This is the accuracy using decision tree classifier:-" + str(accuracy_score(pred, labels_test)))
 
+from  sklearn.svm import SVC
+clf=SVC(kernel="linear", C=100)
+clf.fit(Features_train, labels_train)
+pred=clf.predict(Features_test)
+
+print("This is the accuracy using SVM:-" + str(accuracy_score(pred, labels_test)))
 plt.show()
